@@ -1,0 +1,16 @@
+zerops:
+  - setup: nexus
+    build:
+      base: python@3.12
+      deploy:
+        - .
+    run:
+      base: python@3.12
+      start: bash start.sh
+      ports:
+        - port: 8000
+          httpSupport: true
+      healthCheck:
+        httpGet:
+          port: 8000
+          path: /healthz

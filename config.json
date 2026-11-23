@@ -1,0 +1,74 @@
+{
+  "log": {
+    "loglevel": "warning"
+  },
+  "inbounds": [
+    {
+      "tag": "in-1",
+      "listen": "127.0.0.1",
+      "port": 10001,
+      "protocol": "vless",
+      "settings": {
+        "clients": [
+          {
+            "id": "46b4c9ae-2554-4dea-bc0b-b05ca5d72f80",
+            "level": 0
+          }
+        ],
+        "decryption": "none"
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/s1"
+        }
+      }
+    },
+    {
+      "tag": "in-2",
+      "listen": "127.0.0.1",
+      "port": 10002,
+      "protocol": "vmess",
+      "settings": {
+        "clients": [
+          {
+            "id": "c47f9d5a-bd90-4a57-97cc-2c9f6cd955cd",
+            "level": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/s2"
+        }
+      }
+    },
+    {
+      "tag": "in-3",
+      "listen": "127.0.0.1",
+      "port": 10003,
+      "protocol": "trojan",
+      "settings": {
+        "clients": [
+          {
+            "password": "5b9d375a4846656e33b78e13ad42068f",
+            "level": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/s3"
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom",
+      "tag": "direct"
+    }
+  ]
+}
